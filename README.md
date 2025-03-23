@@ -1,12 +1,101 @@
-# React + Vite
+# Hotel F&B Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is part of a hotel management system that handles the **Restaurant & Bar Section** (F&B) of the hotel. It provides functionalities for:
 
-Currently, two official plugins are available:
+- Menu management
+- Order processing (by customers or waiters)
+- Kitchen staff updates
+- Admin dashboards
+- User role-based access
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The system uses a **MERN stack** (MongoDB, Express-less Node.js, React.js) with **Vite** for fast frontend development and **Tailwind CSS** for UI styling.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔧 Tech Stack
+
+### Frontend
+- React.js
+- Vite
+- Tailwind CSS
+- Postman (for API testing)
+
+### Backend
+- Node.js (no Express, pure HTTP module)
+- MongoDB (hosted on MongoDB Atlas)
+- Mongoose
+- Dotenv for configuration
+
+---
+
+## 📁 Project Structure
+root/ ├── frontend/ # React + Vite + Tailwind └── fnb-backend/ # Node.js + Mongoose APIs ├── models/ ├── routes/ ├── config/ └── index.js
+
+---
+
+## 📦 Backend Functionalities
+
+- ✅ User Registration (Admin, Customer, Waiter, Kitchen Staff)
+- ✅ Role-based access handling
+- ✅ Menu item CRUD (Create, Read)
+- ✅ Order placement by Customer/Waiter
+- ✅ Order tracking (Pending → Preparing → Ready → Delivered)
+
+---
+
+## 📌 APIs Implemented
+
+### `POST /user`
+Create a new user.
+
+### `GET /menu`
+Retrieve all available menu items.
+
+### `POST /menu`
+Add a new menu item (Admin-only in future).
+
+### `POST /order`
+Place a new order.
+
+---
+
+## 📋 Planned UI Screens
+
+1. Login / Register
+2. Dashboards:
+   - Admin
+   - Customer
+   - Waiter
+   - Kitchen Staff
+3. Menu Pages:
+   - View Menu
+   - Add/Edit Menu (Admin)
+4. Order Management:
+   - Place Order
+   - Track Order Status
+   - Kitchen Updates
+   - Admin Management
+5. Optional Booking Page
+
+---
+
+## 🛠 Local Setup (Frontend)
+
+```bash
+cd restaurant_bar
+npm install
+npm run dev
+```
+
+## 🛠 Local Setup (Backend)
+
+```bash
+cd fnb-backend
+npm install
+node index.js
+```
+Make sure you add a .env file in the backend directory with your MongoDB URI:
+
+```bash
+MONGO_URI="your-mongodb-connection-string"
+```
